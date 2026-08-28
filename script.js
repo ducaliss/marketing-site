@@ -9,11 +9,17 @@ const modal=document.querySelector('#service-modal');const modalContent=document
 document.querySelectorAll('[data-service]').forEach(button=>button.addEventListener('click',()=>{const item=serviceContent[button.dataset.service];modalContent.innerHTML=`<p class="eyebrow">Услуга</p><h2>${item.title}</h2><p>${item.intro}</p><h3>Что входит в работу</h3><ul>${item.items.map(text=>`<li>${text}</li>`).join('')}</ul>`;modal.showModal();document.body.classList.add('modal-open')}));
 document.querySelector('.modal-close').addEventListener('click',()=>modal.close());modal.addEventListener('click',event=>{if(event.target===modal)modal.close()});modal.addEventListener('close',()=>document.body.classList.remove('modal-open'));document.querySelector('#modal-action').addEventListener('click',()=>modal.close());
 const experienceModal=document.querySelector('#experience-modal');
-document.querySelector('[data-experience]').addEventListener('click',()=>{experienceModal.showModal();document.body.classList.add('modal-open')});
+document.querySelectorAll('[data-experience]').forEach(button=>button.addEventListener('click',()=>{experienceModal.showModal();document.body.classList.add('modal-open')}));
 document.querySelector('.experience-modal-close').addEventListener('click',()=>experienceModal.close());
 experienceModal.addEventListener('click',event=>{if(event.target===experienceModal)experienceModal.close()});
 experienceModal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
 document.querySelector('.experience-modal-action').addEventListener('click',()=>experienceModal.close());
+const barModal=document.querySelector('#bar-modal');
+document.querySelector('[data-bar-case]').addEventListener('click',()=>{barModal.showModal();document.body.classList.add('modal-open')});
+document.querySelector('.bar-modal-close').addEventListener('click',()=>barModal.close());
+barModal.addEventListener('click',event=>{if(event.target===barModal)barModal.close()});
+barModal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+document.querySelector('.bar-modal-action').addEventListener('click',()=>barModal.close());
 const caseModal=document.querySelector('#case-modal');
 document.querySelectorAll('[data-case]').forEach(button=>button.addEventListener('click',()=>{caseModal.showModal();document.body.classList.add('modal-open')}));
 document.querySelector('.case-modal-close').addEventListener('click',()=>caseModal.close());

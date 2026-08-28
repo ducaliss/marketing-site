@@ -159,6 +159,135 @@ body > main > .services{
 }
 .services:before{display:none!important}
 
+/* Editorial experience feature: a full-width story, not another section card. */
+body > main > .experience-feature{
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  margin:0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(134,79,247,.15),transparent 30%),
+    linear-gradient(135deg,#f4f0fb 0%,#fbfaff 55%,#eee7fb 100%);
+}
+.experience-feature:before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  right:-130px;
+  bottom:-190px;
+  width:460px;
+  height:460px;
+  border:1px solid rgba(119,67,229,.1);
+  border-radius:50%;
+  box-shadow:0 0 0 70px rgba(119,67,229,.045),0 0 0 140px rgba(119,67,229,.025);
+}
+.experience-feature-inner{
+  display:grid;
+  grid-template-columns:minmax(360px,.86fr) minmax(500px,1.14fr);
+  align-items:center;
+  gap:clamp(52px,6vw,94px);
+  width:min(var(--editorial-max),100%);
+  margin:0 auto;
+  padding:100px 64px 108px;
+}
+.experience-feature-visual{
+  position:relative;
+  min-width:0;
+  height:620px;
+  margin:0;
+  overflow:hidden;
+  border:1px solid rgba(39,28,59,.16);
+  border-radius:32px;
+  background:#151a25;
+  box-shadow:0 34px 80px rgba(37,25,58,.2);
+}
+.experience-feature-visual:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 46%,rgba(14,12,24,.1) 65%,rgba(17,11,30,.84) 100%),linear-gradient(135deg,rgba(126,68,244,.08),transparent 48%);
+  pointer-events:none;
+}
+.experience-feature-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 44%;
+  filter:contrast(1.035);
+  transform:scale(1.01);
+}
+.experience-feature-visual figcaption{
+  position:absolute;
+  z-index:1;
+  right:30px;
+  bottom:27px;
+  left:30px;
+  display:grid;
+  gap:5px;
+  color:#fff;
+}
+.experience-feature-visual figcaption strong{font-size:19px;letter-spacing:-.025em}
+.experience-feature-visual figcaption span{color:#c9c1d7;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.experience-feature-copy{max-width:680px}
+.experience-feature-copy .eyebrow{margin-bottom:22px;color:#7540ef}
+.experience-feature-copy h2{
+  max-width:650px;
+  margin:0;
+  color:#111624;
+  font-size:clamp(50px,5vw,72px);
+  line-height:.99;
+  letter-spacing:-.06em;
+}
+.experience-feature-lead{
+  max-width:650px;
+  margin:30px 0 14px;
+  color:#353947;
+  font-size:19px;
+  font-weight:650;
+  line-height:1.6;
+}
+.experience-feature-text{
+  max-width:640px;
+  margin:0;
+  color:#73707b;
+  font-size:15px;
+  line-height:1.75;
+}
+.experience-feature-facts{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  margin:34px 0 30px;
+  border-block:1px solid rgba(58,45,78,.14);
+}
+.experience-feature-facts>div{
+  display:grid;
+  align-content:center;
+  gap:5px;
+  min-height:102px;
+  padding:18px 18px 18px 0;
+}
+.experience-feature-facts>div+div{padding-left:20px;border-left:1px solid rgba(58,45,78,.12)}
+.experience-feature-facts strong{color:#171b28;font-size:20px;letter-spacing:-.035em}
+.experience-feature-facts span{max-width:150px;color:#85818c;font-size:11px;line-height:1.5}
+.experience-feature-button{
+  min-width:260px;
+  min-height:60px;
+  justify-content:space-between;
+  gap:35px;
+  padding-inline:25px;
+  border:1px solid #8f5cf6;
+  border-radius:15px;
+  background:linear-gradient(135deg,#8d52fa 0%,#6f31eb 60%,#5721d3 100%);
+  color:#fff;
+  box-shadow:0 18px 38px rgba(112,48,231,.3),inset 0 1px 0 rgba(255,255,255,.22);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.experience-feature-button:hover{transform:translateY(-3px);box-shadow:0 24px 48px rgba(112,48,231,.4),inset 0 1px 0 rgba(255,255,255,.22)}
+.experience-feature-button span{font-size:19px}
+
 /* A deliberate dark chapter, full bleed and without a container silhouette. */
 body > main > .process{
   background:
@@ -209,6 +338,8 @@ body > main > .contact{
   .hero.hero-light .hero-inner{min-height:690px!important;padding:40px!important}
   .hero.hero-light .results-card{right:24px!important;bottom:24px!important}
   body > main > .services{padding:96px 46px 112px!important}
+  .experience-feature-inner{grid-template-columns:minmax(320px,.82fr) minmax(440px,1.18fr);gap:46px;padding:86px 46px 94px}
+  .experience-feature-visual{height:560px}
   .process .process-inner{padding:98px 46px 106px!important}
   body > main > .cases{padding:104px 46px 76px!important}
   body > main > .contact{padding:72px 54px 112px!important}
@@ -243,6 +374,13 @@ body > main > .contact{
     max-width:none!important;
   }
   body > main > .services{padding:78px 28px 92px!important}
+  .experience-feature-inner{grid-template-columns:minmax(280px,.8fr) minmax(380px,1.2fr);gap:34px;padding:76px 28px 82px}
+  .experience-feature-visual{height:510px;border-radius:26px}
+  .experience-feature-copy h2{font-size:clamp(45px,6vw,57px)}
+  .experience-feature-lead{margin-top:24px;font-size:17px}
+  .experience-feature-facts{margin-block:27px 25px}
+  .experience-feature-facts>div{min-height:90px;padding-right:10px}
+  .experience-feature-facts>div+div{padding-left:13px}
   .process .process-inner{padding:82px 28px 90px!important}
   body > main > .cases{padding:86px 28px 58px!important}
   body > main > .contact{padding:58px 28px 88px!important}
@@ -254,6 +392,20 @@ body > main > .contact{
     background-size:auto 250px!important;
   }
   body > main > .services{padding:66px 20px 78px!important}
+  .experience-feature-inner{display:flex;flex-direction:column;align-items:stretch;gap:42px;padding:64px 20px 70px}
+  .experience-feature-visual{width:100%;height:430px;border-radius:24px}
+  .experience-feature-visual img{object-position:center 38%}
+  .experience-feature-visual figcaption{right:22px;bottom:21px;left:22px}
+  .experience-feature-copy{max-width:none}
+  .experience-feature-copy h2{font-size:clamp(39px,12vw,48px)}
+  .experience-feature-lead{font-size:16px;line-height:1.55}
+  .experience-feature-text{font-size:14px;line-height:1.65}
+  .experience-feature-facts{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:27px}
+  .experience-feature-facts>div{min-height:94px;padding:15px 8px 15px 0}
+  .experience-feature-facts>div+div{padding-left:10px}
+  .experience-feature-facts strong{font-size:17px}
+  .experience-feature-facts span{font-size:9px}
+  .experience-feature-button{width:100%;min-width:0}
   .process .process-inner{padding:70px 20px 78px!important}
   body > main > .cases{padding:72px 20px 48px!important}
   body > main > .contact{padding:48px 20px 72px!important}

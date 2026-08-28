@@ -26,8 +26,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260828-full-bleed3">
-  <link rel="stylesheet" href="reference.css?v=20260828-seo1">
-<link rel="stylesheet" href="continuous.css?v=20260828-editorial3">
+  <link rel="stylesheet" href="reference.css?v=20260828-bar-case2">
+<link rel="stylesheet" href="continuous.css?v=20260828-experience1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,6 +38,7 @@
         "name": "Музенитов Иван Георгиевич",
         "url": "https://marketolog-penza.ru/",
         "jobTitle": "Специалист по интернет-рекламе",
+        "image": "https://marketolog-penza.ru/images/ivan-muzenitov-smm.jpg",
         "email": "mailto:ivan-muzenitov@yandex.ru",
         "telephone": "+7-987-514-99-77",
         "address": {
@@ -56,6 +57,10 @@
         "sameAs": [
           "https://t.me/penzatut",
           "https://max.ru/u/f9LHodD0cOI6moJ5_l5qgewkaPltUf2XHVLtxAoabsSk8i3A_e_SWyXuCgI"
+        ],
+        "subjectOf": [
+          {"@id": "https://marketolog-penza.ru/#experience-article"},
+          {"@id": "https://marketolog-penza.ru/#bar-case-article"}
         ]
       },
       {
@@ -79,6 +84,90 @@
           "Маркетинговый аудит"
         ],
         "priceRange": "По договорённости"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://marketolog-penza.ru/#website",
+        "url": "https://marketolog-penza.ru/",
+        "name": "Маркетолог из Пензы",
+        "inLanguage": "ru-RU",
+        "publisher": {"@id": "https://marketolog-penza.ru/#person"}
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://marketolog-penza.ru/#webpage",
+        "url": "https://marketolog-penza.ru/",
+        "name": "Специалист по интернет-рекламе в Пензе — Иван Музенитов",
+        "description": "Настройка и ведение интернет-рекламы для бизнеса в Пензе и по всей России: ВКонтакте, Яндекс Директ и Telegram.",
+        "isPartOf": {"@id": "https://marketolog-penza.ru/#website"},
+        "about": [
+          {"@id": "https://marketolog-penza.ru/#person"},
+          {"@id": "https://marketolog-penza.ru/#service"}
+        ],
+        "hasPart": [
+          {"@id": "https://marketolog-penza.ru/#experience-article"},
+          {"@id": "https://marketolog-penza.ru/#bar-case-article"}
+        ],
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://marketolog-penza.ru/#experience-article",
+        "url": "https://marketolog-penza.ru/#experience",
+        "headline": "7 лет в SMM: проекты, ниши и опыт",
+        "description": "Личный опыт Ивана Музенитова в интернет-маркетинге с 2019 года: проекты, рекламные задачи, работа в агентстве и выводы о продвижении бизнеса.",
+        "articleSection": "Личный опыт",
+        "keywords": [
+          "опыт в SMM",
+          "специалист по интернет-рекламе",
+          "маркетолог Пенза",
+          "продвижение бизнеса"
+        ],
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://marketolog-penza.ru/images/ivan-muzenitov-smm.jpg",
+          "width": 1000,
+          "height": 1500,
+          "caption": "Иван Музенитов — специалист по интернет-рекламе и SMM"
+        },
+        "author": {"@id": "https://marketolog-penza.ru/#person"},
+        "publisher": {"@id": "https://marketolog-penza.ru/#person"},
+        "isPartOf": {"@id": "https://marketolog-penza.ru/#webpage"},
+        "mainEntityOfPage": {"@id": "https://marketolog-penza.ru/#webpage"},
+        "inLanguage": "ru-RU",
+        "dateModified": "2026-08-28"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://marketolog-penza.ru/#bar-case-article",
+        "url": "https://marketolog-penza.ru/#bar-case",
+        "headline": "3 638 подписчиков для пензенского бара по 30 рублей",
+        "description": "Кейс продвижения пензенского бара «Раньше было лучше» во ВКонтакте и Telegram: 3 638 подписчиков из VK Ads, 1 938 575 показов и конверсия 40,6%.",
+        "articleSection": "Кейсы",
+        "keywords": [
+          "реклама бара",
+          "продвижение ВКонтакте",
+          "VK Ads",
+          "реклама в Telegram",
+          "таргетолог Пенза"
+        ],
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://marketolog-penza.ru/images/case-rbl-generated-cover.webp",
+          "width": 1440,
+          "height": 960,
+          "caption": "Кейс продвижения пензенского бара во ВКонтакте и Telegram"
+        },
+        "author": {"@id": "https://marketolog-penza.ru/#person"},
+        "publisher": {"@id": "https://marketolog-penza.ru/#person"},
+        "isPartOf": {"@id": "https://marketolog-penza.ru/#webpage"},
+        "mainEntityOfPage": {"@id": "https://marketolog-penza.ru/#webpage"},
+        "contentLocation": {
+          "@type": "City",
+          "name": "Пенза"
+        },
+        "inLanguage": "ru-RU",
+        "dateModified": "2026-08-28"
       }
     ]
   }
@@ -132,6 +221,27 @@
       </div>
     </section>
 
+    <section class="experience-feature" id="experience" aria-labelledby="experience-feature-title">
+      <div class="experience-feature-inner">
+        <figure class="experience-feature-visual">
+          <img src="images/ivan-muzenitov-smm.jpg" alt="Иван Музенитов — специалист по интернет-рекламе и SMM" width="1000" height="1500" loading="lazy" decoding="async">
+          <figcaption><strong>Иван Музенитов</strong><span>Интернет-маркетинг · SMM · реклама</span></figcaption>
+        </figure>
+        <div class="experience-feature-copy">
+          <p class="eyebrow">Личный опыт</p>
+          <h2 id="experience-feature-title">7 лет в SMM:<br>проекты, решения<br>и выводы</h2>
+          <p class="experience-feature-lead">За это время я поработал с десятками бизнесов — от локальных компаний до крупных проектов из разных регионов России.</p>
+          <p class="experience-feature-text">В статье рассказываю, с какими нишами и задачами сталкивался, чему научила работа в рекламном агентстве и почему для каждого бизнеса нужна своя стратегия.</p>
+          <div class="experience-feature-facts" aria-label="Опыт в цифрах">
+            <div><strong>с 2019</strong><span>в интернет-маркетинге</span></div>
+            <div><strong>70+</strong><span>проектов в разных сферах</span></div>
+            <div><strong>2,5 года</strong><span>работы в агентстве</span></div>
+          </div>
+          <button class="button experience-feature-button" type="button" data-experience aria-haspopup="dialog" aria-controls="experience-modal">Прочитать статью <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
     <section class="process" id="process">
       <div class="section process-inner"><div class="section-heading invert"><p class="eyebrow">Как будет проходить наше сотрудничество</p><h2>Понятный процесс —<br>от знакомства до роста</h2><p class="process-lead">Вы всегда понимаете, что происходит с рекламой сейчас, какой этап идёт следующим и к какому результату мы движемся.</p></div>
         <ol class="steps">
@@ -148,7 +258,7 @@
     <section class="cases section" id="cases">
       <div class="section-heading row"><div><p class="eyebrow">Кейсы</p><h2>Реальные проекты<br>и результаты</h2><p class="cases-lead">Примеры рекламных кампаний для малого, среднего и крупного бизнеса из разных сфер. Нажмите на карточку, чтобы посмотреть проект подробнее.</p></div><span class="all-cases case-count">Пенза и вся Россия <span>●</span></span></div>
       <div class="case-grid">
-        <button class="case-card case-purple case-experience-cover" type="button" data-experience aria-haspopup="dialog"><span class="case-index">01</span><span class="case-tag">Опыт и проекты</span><div class="case-body"><h3>7 лет в SMM:<br>проекты и опыт</h3><p>Направления, компании и бизнес-задачи, с которыми я работал с 2019 года.</p></div><div class="case-metrics"><span>70+ проектов</span><strong>Читать статью <b>→</b></strong></div></button>
+        <button class="case-card case-purple case-rbl-cover" id="bar-case" type="button" data-bar-case aria-haspopup="dialog" aria-controls="bar-modal"><span class="case-index">01</span><span class="case-tag">Бар · Пенза</span><div class="case-body"><h3>3 638 подписчиков<br>для пензенского бара</h3><p>Продвижение бара «Раньше было лучше» во ВКонтакте и Telegram.</p></div><div class="case-metrics"><span>30 ₽ за подписчика</span><strong>Смотреть кейс <b>→</b></strong></div></button>
         <button class="case-card case-dark case-construction-cover" type="button" data-case="chelyabinsk" aria-haspopup="dialog"><span class="case-index">02</span><span class="case-tag">Строительство</span><div class="case-body"><h3>Строительство домов<br>в Челябинске</h3><p>364 заявки за 4 месяца для компании из сферы строительства частных домов.</p></div><div class="case-metrics"><span>554 ₽ за заявку</span><strong>Смотреть кейс <b>→</b></strong></div></button>
         <button class="case-card case-light case-kitchen-cover" type="button" data-kitchen-case aria-haspopup="dialog"><span class="case-index">03</span><span class="case-tag">Производство мебели</span><div class="case-body"><h3>Заявки на<br>кухонную мебель</h3><p>Как последовательная оптимизация рекламы привела к 86 заявкам за месяц.</p></div><div class="case-metrics"><span>1 500 ₽ за заявку</span><strong>Смотреть кейс <b>→</b></strong></div></button>
         <button class="case-card case-image case-seafood-cover" type="button" data-seafood-case aria-haspopup="dialog"><span class="case-index">04</span><span class="case-tag">Ритейл</span><div class="case-body"><h3>«Акула Вкуса» —<br>магазин морепродуктов</h3><p>Продвижение нового фирменного магазина морепродуктов и деликатесов в Пензе.</p></div><div class="case-metrics"><span>18,48 ₽ за подписчика</span><strong>Смотреть кейс <b>→</b></strong></div></button>
@@ -321,6 +431,121 @@
       <div class="experience-modal-footer">
         <p>Список отражает основные направления и не включает все проекты за семь лет работы.</p>
         <a class="button button-primary experience-modal-action" href="#contact">Обсудить ваш проект</a>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="modal case-modal bar-modal" id="bar-modal" aria-labelledby="bar-case-title">
+    <button class="modal-close case-modal-close bar-modal-close" type="button" aria-label="Закрыть кейс">×</button>
+    <div class="case-modal-hero bar-modal-hero">
+      <p class="case-modal-kicker">Кейс · Бар и развлечения</p>
+      <div class="case-modal-heading">
+        <div>
+          <h2 id="bar-case-title">3 638 подписчиков<br>для пензенского бара</h2>
+          <p>Как реклама во ВКонтакте и Telegram помогла повысить узнаваемость бара «Раньше было лучше» и собрать вокруг него свою аудиторию.</p>
+        </div>
+        <span class="case-period"><small>Статус проекта</small>Работа продолжается</span>
+      </div>
+      <div class="case-result-strip">
+        <div><strong>3 638</strong><span>подписчиков из VK Ads</span></div>
+        <div><strong>30 ₽</strong><span>средняя цена подписчика</span></div>
+        <div><strong>VK + TG</strong><span>две рекламные площадки</span></div>
+      </div>
+    </div>
+
+    <div class="case-modal-content">
+      <section class="case-story-grid" aria-label="Описание проекта">
+        <div>
+          <p class="case-content-label">Задача</p>
+          <h3>Набрать подписчиков и повысить узнаваемость бара</h3>
+          <p>Нам было важно не просто увеличить цифру в сообществе, а привлечь живую аудиторию из Пензы — людей, которым близки атмосфера и формат заведения и которые могут стать постоянными гостями.</p>
+        </div>
+        <div>
+          <p class="case-content-label">Результат</p>
+          <h3>3 638 живых подписчиков из рекламы</h3>
+          <p>Основной измеримый результат получили во ВКонтакте: пользователи вступали в сообщество непосредственно после объявлений в VK Ads. Средняя стоимость подписчика составила около 30 рублей.</p>
+        </div>
+      </section>
+
+      <section class="case-numbers" aria-label="Показатели рекламной кампании бара">
+        <div><span>Рекламный бюджет</span><strong>110 000 ₽</strong></div>
+        <div><span>Показы рекламы</span><strong>1 938 575</strong></div>
+        <div><span>Переходы</span><strong>8 961</strong></div>
+        <div><span>Цена перехода</span><strong>12,29 ₽</strong></div>
+        <div><span>Конверсия в подписку</span><strong>40,6%</strong></div>
+        <div class="case-numbers-accent"><span>Подписчики</span><strong>3 638</strong></div>
+      </section>
+
+      <section class="case-timeline bar-creative-review" aria-labelledby="bar-creative-title">
+        <div class="case-timeline-heading">
+          <p class="case-content-label">Тестирование креативов</p>
+          <h3 id="bar-creative-title">Какие форматы сработали лучше</h3>
+        </div>
+        <ol>
+          <li><span>01</span><strong>«Народные» креативы</strong><p>Обычные фотографии без сложной обработки и текста снова показали высокую эффективность.</p></li>
+          <li><span>02</span><strong>ИИ-ролик</strong><p>Видео, построенное на воспоминаниях из прошлого и душевной атмосфере, тоже дало хороший результат.</p></li>
+          <li><span>03</span><strong>Рекламные баннеры</strong><p>Использовали стандартный формат для понятной подачи предложения и знакомства с заведением.</p></li>
+          <li><span>04</span><strong>Видео с тусовок</strong><p>Как ни удивительно, именно этот естественный для бара формат показал самый слабый результат.</p></li>
+        </ol>
+      </section>
+
+      <section class="case-proof" aria-labelledby="bar-proof-title">
+        <div class="case-proof-heading">
+          <div>
+            <p class="case-content-label">Материалы проекта</p>
+            <h3 id="bar-proof-title">Статистика и рекламные креативы</h3>
+          </div>
+          <p>Фактические показатели из VK Ads и примеры объявлений, которые использовались в кампании.</p>
+        </div>
+        <div class="case-proof-grid">
+          <figure class="case-proof-card case-proof-wide bar-proof-stats">
+            <img src="images/case-rbl-vk-ads-stats.png" alt="Статистика рекламной кампании бара Раньше было лучше в VK Ads" loading="lazy" decoding="async">
+            <figcaption><span>Подтверждение результата</span>Сводная статистика кампаний в VK Ads</figcaption>
+          </figure>
+          <figure class="case-proof-card">
+            <img src="images/case-rbl-creative-street.png" alt="Рекламное объявление бара Раньше было лучше с фотографией входа" loading="lazy" decoding="async">
+            <figcaption><span>Креатив 01</span>Объявление с атмосферной фотографией входа</figcaption>
+          </figure>
+          <figure class="case-proof-card bar-proof-mobile">
+            <img src="images/case-rbl-creative-banner.png" alt="Рекламный баннер пензенского бара Раньше было лучше" loading="lazy" decoding="async">
+            <figcaption><span>Креатив 02</span>Баннер с позиционированием заведения</figcaption>
+          </figure>
+          <figure class="case-proof-card">
+            <img src="images/case-rbl-video-party.png" alt="Кадр из рекламного видео с вечеринкой в баре Раньше было лучше" loading="lazy" decoding="async">
+            <figcaption><span>Видео</span>Фрагмент ролика с тусовки</figcaption>
+          </figure>
+          <figure class="case-proof-card bar-proof-mobile">
+            <img src="images/case-rbl-video-anniversary.png" alt="Рекламное видео к годовщине бара Раньше было лучше" loading="lazy" decoding="async">
+            <figcaption><span>Видео</span>Вертикальный ролик к годовщине бара</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-insight bar-insight">
+        <div class="case-insight-mark">Р</div>
+        <div>
+          <p class="case-content-label">Позиционирование</p>
+          <h3>Не пафосное заведение, а место для своих</h3>
+          <p>«Раньше было лучше» — бар, где друзья собираются обсудить прошедшую неделю, вкусно поесть, выпить прохладных напитков, а затем спуститься вниз и потанцевать. Здесь нет ставки на дорогой ремонт и звёздных диджеев: всё по-свойски, уютно, тусовочно и немного олдскульно.</p>
+          <p>Именно на этой атмосфере мы построили рекламную коммуникацию. Нам нужны были не случайные подписчики, а «свои» люди — будущие постоянные гости и часть большой барной семьи.</p>
+        </div>
+      </section>
+
+      <section class="case-story-grid bar-channel-story" aria-label="Реклама в Telegram и дальнейшая работа">
+        <div>
+          <p class="case-content-label">Telegram</p>
+          <h3>Охватили активную аудиторию Пензы</h3>
+          <p>Рекламу запускали также в Telegram. Креативы несколько раз показали активной аудитории пензенских каналов: охватили заметные городские новостные ресурсы и каналы заведений общепита, присутствующие на площадке.</p>
+        </div>
+        <div>
+          <p class="case-content-label">Продолжение</p>
+          <h3>Сотрудничество продолжается</h3>
+          <p>Узнаваемость кампании стала заметна даже внутри рынка: конкуренты рассказывали, что видят рекламу бара в своих Telegram-каналах чаще, чем собственные объявления. Проект продолжается — дальше будем развивать рабочие форматы и усиливать присутствие бренда.</p>
+        </div>
+      </section>
+
+      <div class="case-modal-footer">
+        <p>Показатели приведены по данным рекламных кампаний VK Ads. Результаты Telegram оценивались по охвату размещений и узнаваемости рекламы.</p>
+        <a class="button button-primary case-modal-action bar-modal-action" href="#contact">Обсудить похожий проект</a>
       </div>
     </div>
   </dialog>
@@ -608,6 +833,6 @@
   </dialog>
   <dialog class="modal legal-modal" id="legal-modal"><button class="modal-close legal-modal-close" type="button" aria-label="Закрыть">×</button><div id="legal-modal-content"></div></dialog>
   <button class="back-to-top" type="button" aria-label="Вернуться в начало страницы">↑</button>
-  <script src="script.js?v=20260828-seo2"></script>
+  <script src="script.js?v=20260828-bar-case1"></script>
 </body>
 </html>
