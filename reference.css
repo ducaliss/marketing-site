@@ -198,11 +198,11 @@ section[id]{scroll-margin-top:122px}
 .cases .case-purple:before{background:radial-gradient(circle at 85% 15%,#b69aff33 0,transparent 35%),linear-gradient(135deg,#35255b,#161526)}
 .cases .case-dark:before{background:radial-gradient(circle at 85% 15%,#5e76a92b 0,transparent 37%),linear-gradient(135deg,#1c2637,#0c1320)}
 .cases .case-light{color:#fff;border:1px solid #ffffff14}.cases .case-light:before{background:radial-gradient(circle at 82% 12%,#aa8fe32b 0,transparent 38%),linear-gradient(135deg,#393747,#171925)}
-.cases .case-experience-cover:before{background:linear-gradient(135deg,rgba(20,16,35,.82) 0%,rgba(34,24,56,.66) 58%,rgba(14,16,26,.8) 100%),url('images/case-experience-cover-v1.jpg') center/cover no-repeat}
-.cases .case-construction-cover:before{background:linear-gradient(135deg,rgba(12,20,33,.84) 0%,rgba(17,28,44,.69) 58%,rgba(9,15,25,.82) 100%),url('images/case-construction-cover-v1.jpg') center/cover no-repeat}
-.cases .case-kitchen-cover:before{background:linear-gradient(135deg,rgba(16,20,32,.84) 0%,rgba(37,30,51,.72) 58%,rgba(13,17,27,.82) 100%),url('images/case-kitchen-cover-v1.jpg') center/cover no-repeat}
+.cases .case-experience-cover:before{background:linear-gradient(135deg,rgba(20,16,35,.82) 0%,rgba(34,24,56,.66) 58%,rgba(14,16,26,.8) 100%),url('images/case-experience-cover-v1.webp') center/cover no-repeat}
+.cases .case-construction-cover:before{background:linear-gradient(135deg,rgba(12,20,33,.84) 0%,rgba(17,28,44,.69) 58%,rgba(9,15,25,.82) 100%),url('images/case-construction-cover-v1.webp') center/cover no-repeat}
+.cases .case-kitchen-cover:before{background:linear-gradient(135deg,rgba(16,20,32,.84) 0%,rgba(37,30,51,.72) 58%,rgba(13,17,27,.82) 100%),url('images/case-kitchen-cover-v1.webp') center/cover no-repeat}
 .cases .case-image:before{background:radial-gradient(circle at 82% 12%,#b45f8c2b 0,transparent 38%),linear-gradient(135deg,#35263b,#12151f)}
-.cases .case-seafood-cover:before{background:linear-gradient(135deg,rgba(27,17,31,.84) 0%,rgba(47,26,43,.7) 58%,rgba(16,16,25,.82) 100%),url('images/case-seafood-cover-v1.jpg') center/cover no-repeat}
+.cases .case-seafood-cover:before{background:linear-gradient(135deg,rgba(27,17,31,.84) 0%,rgba(47,26,43,.7) 58%,rgba(16,16,25,.82) 100%),url('images/case-seafood-cover-v1.webp') center/cover no-repeat}
 .case-index{position:absolute!important;right:30px;top:27px;color:#ffffff55;font-size:14px;font-weight:800;letter-spacing:.08em}
 .cases .case-tag{align-self:flex-start;padding:7px 12px;border:1px solid #ffffff3b;border-radius:100px;background:#ffffff0b;font-size:11px;font-weight:700}
 .case-body{margin-top:auto;max-width:520px}.cases .case-card h3{margin:0 0 13px;font-size:30px;line-height:1.12;letter-spacing:-.035em}.case-body p{max-width:470px;margin:0;color:#bbc1cc;font-size:14px;line-height:1.6}
@@ -352,7 +352,7 @@ section[id]{scroll-margin-top:122px}
   overflow:hidden;
   border:1px solid #d8d2e3;
   border-radius:28px;
-  background:#f8f6fb url('images/hero-laptop-analytics-v6-clean.png') center/cover no-repeat;
+  background:#f8f6fb url('images/hero-laptop-analytics-v6-clean.webp') center/cover no-repeat;
   box-shadow:0 24px 70px rgba(23,19,43,.09);
 }
 .hero.hero-light:before{
