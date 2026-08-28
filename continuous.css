@@ -1,0 +1,191 @@
+/* Continuous editorial layout
+   Sections remain semantic in HTML, but the page reads as one composition. */
+
+:root{
+  --editorial-max:1420px;
+  --editorial-bg:#fbfaff;
+  --editorial-ink:#111624;
+}
+
+html{background:var(--editorial-bg)}
+body{
+  padding:0!important;
+  background:var(--editorial-bg)!important;
+}
+
+/* Navigation belongs to the page, not to a floating outer card. */
+.header{
+  width:100%!important;
+  margin:0!important;
+  top:0!important;
+  border:0!important;
+  border-radius:0!important;
+  padding-inline:max(28px,calc((100vw - var(--editorial-max))/2 + 48px))!important;
+  box-shadow:0 10px 32px rgba(13,20,33,.12)!important;
+}
+
+/* One full-width document canvas. */
+body > main{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  overflow:visible!important;
+  border:0!important;
+  border-radius:0!important;
+  background:var(--editorial-bg)!important;
+  box-shadow:none!important;
+}
+
+body > main > .hero,
+body > main > .services,
+body > main > .process,
+body > main > .cases,
+body > main > .contact{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+/* Hero: full-width atmosphere, stable centred composition. */
+body > main > .hero.hero-light{
+  min-height:720px!important;
+  padding:0!important;
+  background-color:#f8f6fb!important;
+  background-size:auto 100%!important;
+  background-position:80% center!important;
+  background-repeat:no-repeat!important;
+}
+.hero.hero-light .hero-inner{
+  position:relative!important;
+  display:block!important;
+  width:min(var(--editorial-max),100%)!important;
+  min-height:720px!important;
+  margin:0 auto!important;
+  padding:48px 54px!important;
+}
+.hero.hero-light .hero-media{
+  position:absolute!important;
+  inset:0!important;
+}
+.hero.hero-light .results-card{
+  right:30px!important;
+  bottom:30px!important;
+}
+
+/* The light chapters share the exact same canvas. */
+body > main > .services,
+body > main > .cases,
+body > main > .contact{
+  position:relative;
+  overflow:visible!important;
+  background:transparent!important;
+}
+body > main > .services{
+  padding:118px max(32px,calc((100vw - var(--editorial-max))/2 + 64px)) 142px!important;
+}
+.services:before{display:none!important}
+
+/* A deliberate dark chapter, full bleed and without a container silhouette. */
+body > main > .process{
+  background:
+    radial-gradient(circle at 18% 0,#202a42 0,transparent 34%),
+    radial-gradient(circle at 100% 100%,#201743 0,transparent 34%),
+    #0b1320!important;
+}
+.process .process-inner{
+  width:min(var(--editorial-max),100%)!important;
+  max-width:var(--editorial-max)!important;
+  margin:0 auto!important;
+  padding:118px 64px 126px!important;
+}
+
+/* Cases and contacts are consecutive parts of the same light field. */
+body > main > .cases{
+  padding:126px max(32px,calc((100vw - var(--editorial-max))/2 + 64px)) 88px!important;
+}
+.cases:after{display:none!important}
+body > main > .contact{
+  padding:82px max(36px,calc((100vw - var(--editorial-max))/2 + 72px)) 132px!important;
+  background:transparent!important;
+}
+.contact:before{
+  z-index:-1!important;
+  right:max(7%,calc((100vw - var(--editorial-max))/2 + 24%))!important;
+  top:-175px!important;
+  opacity:.72;
+}
+
+/* Footer closes the same page canvas. */
+.footer{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.footer .footer-inner{
+  width:min(var(--editorial-max),100%)!important;
+  max-width:var(--editorial-max)!important;
+  margin:0 auto!important;
+}
+
+@media(max-width:1120px){
+  .header{padding-inline:28px!important}
+  .hero.hero-light .hero-inner{min-height:690px!important;padding:40px!important}
+  .hero.hero-light .results-card{right:24px!important;bottom:24px!important}
+  body > main > .services{padding:96px 46px 112px!important}
+  .process .process-inner{padding:98px 46px 106px!important}
+  body > main > .cases{padding:104px 46px 76px!important}
+  body > main > .contact{padding:72px 54px 112px!important}
+}
+
+@media(max-width:900px){
+  .header{padding-inline:22px!important}
+  body > main,
+  body > main > .hero,
+  body > main > .services,
+  body > main > .process,
+  body > main > .cases,
+  body > main > .contact,
+  .footer{
+    width:100%!important;
+    border-radius:0!important;
+  }
+  body > main > .hero.hero-light{
+    min-height:0!important;
+    padding:360px 28px 34px!important;
+    background-size:auto 390px!important;
+    background-position:center top!important;
+  }
+  .hero.hero-light .hero-inner{display:contents!important}
+  .hero.hero-light .hero-media{position:relative!important;inset:auto!important}
+  .hero.hero-light .results-card{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  body > main > .services{padding:78px 28px 92px!important}
+  .process .process-inner{padding:82px 28px 90px!important}
+  body > main > .cases{padding:86px 28px 58px!important}
+  body > main > .contact{padding:58px 28px 88px!important}
+}
+
+@media(max-width:620px){
+  body > main > .hero.hero-light{
+    padding:218px 0 20px!important;
+    background-size:auto 250px!important;
+  }
+  body > main > .services{padding:66px 20px 78px!important}
+  .process .process-inner{padding:70px 20px 78px!important}
+  body > main > .cases{padding:72px 20px 48px!important}
+  body > main > .contact{padding:48px 20px 72px!important}
+  .contact:before{display:none!important}
+}

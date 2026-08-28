@@ -956,6 +956,225 @@ section[id]{scroll-margin-top:122px}
   .hero.hero-light .hero-consult{display:flex;grid-template-columns:none;align-items:flex-start;width:100%;max-width:none;min-height:0;margin-top:18px;padding:18px}
 }
 
+/* Full-bleed page architecture: one continuous document, constrained content only */
+:root{--page-content:1420px}
+html{background:#fbfaff}
+body{
+  padding:0;
+  background:#fbfaff;
+}
+.header{
+  width:100%;
+  margin:0;
+  top:0;
+  border:0;
+  border-radius:0;
+  box-shadow:0 10px 32px rgba(13,20,33,.12);
+}
+main{
+  display:block;
+  width:100%;
+  max-width:none;
+  margin:0;
+  overflow:visible;
+  border:0;
+  border-radius:0;
+  background:#fbfaff;
+  box-shadow:none;
+}
+main > .hero.hero-light,
+main > .services,
+main > .process,
+main > .cases,
+main > .contact{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+main > .hero.hero-light{
+  background-color:#f8f6fb;
+}
+main > .hero.hero-light:after{
+  background:radial-gradient(circle at 5% 1%,rgba(137,79,255,.09),transparent 30%);
+}
+main > .services{
+  background:radial-gradient(circle at 100% 0,#eee8ff 0,transparent 27%),#fbfaff;
+}
+main > .process{
+  background:radial-gradient(circle at 18% 0,#202a42 0,transparent 34%),radial-gradient(circle at 100% 100%,#201743 0,transparent 34%),#0b1320;
+}
+main > .process .process-inner{
+  width:min(var(--page-content),100%);
+  max-width:var(--page-content);
+  margin:0 auto;
+}
+main > .cases{
+  background:radial-gradient(circle at 100% 0,#eee8ff 0,transparent 28%),#fbfaff;
+}
+main > .contact{
+  margin-bottom:0;
+  background:radial-gradient(circle at 4% 0,#eee7ff 0,transparent 29%),radial-gradient(circle at 70% 120%,#e2d7ff 0,transparent 34%),#fbfaff;
+}
+.footer{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:radial-gradient(circle at 85% 0,#332054 0,transparent 30%),linear-gradient(145deg,#111927 0%,#0a101a 72%);
+  box-shadow:none;
+}
+.footer .footer-inner{
+  width:min(var(--page-content),100%);
+  max-width:var(--page-content);
+  margin:0 auto;
+}
+@media(min-width:1121px){
+  .header{
+    padding-inline:max(48px,calc((100vw - var(--page-content))/2 + 48px));
+  }
+  main > .hero.hero-light{
+    padding-inline:max(54px,calc((100vw - var(--page-content))/2 + 54px));
+  }
+  main > .hero.hero-light .results-card{
+    right:max(30px,calc((100vw - var(--page-content))/2 + 30px));
+  }
+  main > .services,
+  main > .cases{
+    padding-inline:max(64px,calc((100vw - var(--page-content))/2 + 64px));
+  }
+  main > .contact{
+    padding-inline:max(72px,calc((100vw - var(--page-content))/2 + 72px));
+  }
+}
+@media(max-width:900px){
+  .header,
+  main,
+  main > .hero.hero-light,
+  main > .services,
+  main > .process,
+  main > .cases,
+  main > .contact,
+  .footer{
+    width:100%;
+    border-radius:0;
+  }
+}
+
+/* Continuous canvas v2: no section silhouettes, backgrounds flow into one another */
+main{
+  border:0;
+  border-radius:0;
+  background:#fbfaff;
+  box-shadow:none;
+}
+main > .hero.hero-light,
+main > .services,
+main > .process,
+main > .cases,
+main > .contact{
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+main > .hero.hero-light:after{
+  background:
+    linear-gradient(180deg,transparent 68%,rgba(251,250,255,.45) 84%,#fbfaff 100%),
+    radial-gradient(circle at 5% 1%,rgba(137,79,255,.09),transparent 30%);
+}
+main > .services{
+  background:
+    radial-gradient(circle at 100% 0,#eee8ff 0,transparent 27%),
+    #fbfaff;
+}
+main > .process{
+  background:
+    linear-gradient(180deg,#fbfaff 0,rgba(251,250,255,.7) 22px,rgba(251,250,255,0) 76px),
+    radial-gradient(circle at 18% 0,#202a42 0,transparent 34%),
+    radial-gradient(circle at 100% 100%,#201743 0,transparent 34%),
+    #0b1320;
+}
+main > .cases{
+  background:
+    linear-gradient(180deg,#0b1320 0,rgba(11,19,32,.52) 24px,rgba(11,19,32,0) 78px),
+    radial-gradient(circle at 100% 0,#eee8ff 0,transparent 28%),
+    #fbfaff;
+}
+main > .contact{
+  background:
+    linear-gradient(180deg,#fbfaff 0,rgba(251,250,255,.94) 60px,rgba(251,250,255,0) 180px),
+    radial-gradient(circle at 4% 0,#eee7ff 0,transparent 29%),
+    radial-gradient(circle at 70% 120%,#e2d7ff 0,transparent 34%),
+    #fbfaff;
+}
+.footer{
+  margin-top:0;
+  border:0;
+  border-radius:0;
+  background:
+    linear-gradient(180deg,#fbfaff 0,rgba(251,250,255,.62) 18px,rgba(251,250,255,0) 56px),
+    radial-gradient(circle at 85% 0,#332054 0,transparent 30%),
+    linear-gradient(145deg,#111927 0%,#0a101a 72%);
+  box-shadow:none;
+}
+
+/* Continuous page canvas: sections are chapters, not separate outer cards */
+main{
+  position:relative;
+  isolation:isolate;
+  width:min(1420px,calc(100% - 48px));
+  margin:10px auto 0;
+  overflow:hidden;
+  border:1px solid rgba(218,213,230,.82);
+  border-radius:28px 28px 0 0;
+  background:#fbfaff;
+  box-shadow:0 26px 80px rgba(29,23,48,.065);
+}
+main > .hero,
+main > .services,
+main > .process,
+main > .cases,
+main > .contact{
+  width:100%;
+  margin:0;
+  border-width:0;
+  border-radius:0;
+  box-shadow:none;
+}
+main > .services,
+main > .process,
+main > .cases,
+main > .contact{
+  border-top:1px solid rgba(218,213,230,.66);
+}
+main > .process{border-top-color:rgba(255,255,255,.07)}
+main > .cases{border-top-color:rgba(255,255,255,.06)}
+main > .contact{margin-bottom:0}
+.footer{
+  margin-top:0;
+  border-top:0;
+  border-radius:0 0 28px 28px;
+  box-shadow:0 24px 70px rgba(15,12,27,.08);
+}
+
+@media(max-width:1120px){
+  main{width:calc(100% - 28px)}
+}
+@media(max-width:900px){
+  main{
+    width:100%;
+    margin-top:0;
+    border-width:0;
+    border-radius:0;
+    box-shadow:none;
+  }
+  .footer{margin-top:0;border-radius:0}
+}
+
 /* Desktop hero image composition: clean text area on the left, compact laptop on the right */
 @media(min-width:901px){
   .hero.hero-light{
@@ -1075,4 +1294,118 @@ section[id]{scroll-margin-top:122px}
   .hero.hero-light .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%;margin-top:22px}
   .hero.hero-light .hero-actions .button,.hero.hero-light .hero-actions .button-primary{width:100%;min-width:0}
   .hero.hero-light .hero-consult{display:flex;grid-template-columns:none;align-items:flex-start;width:100%;max-width:none;min-height:0;margin-top:18px;padding:18px}
+}
+
+/* Final full-bleed architecture — this block must remain last */
+:root{--page-content:1420px}
+html,body{background:#fbfaff}
+body{padding:0}
+.header{
+  width:100%;
+  margin:0;
+  top:0;
+  border:0;
+  border-radius:0;
+  box-shadow:0 10px 32px rgba(13,20,33,.12);
+}
+main{
+  display:block;
+  width:100%;
+  max-width:none;
+  margin:0;
+  overflow:visible;
+  border:0;
+  border-radius:0;
+  background:#fbfaff;
+  box-shadow:none;
+}
+main > .hero.hero-light,
+main > .services,
+main > .process,
+main > .cases,
+main > .contact{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+main > .hero.hero-light{background-color:#f8f6fb}
+main > .hero.hero-light:after{background:radial-gradient(circle at 5% 1%,rgba(137,79,255,.09),transparent 30%)}
+main > .services{background:radial-gradient(circle at 100% 0,#eee8ff 0,transparent 27%),#fbfaff}
+main > .process{background:radial-gradient(circle at 18% 0,#202a42 0,transparent 34%),radial-gradient(circle at 100% 100%,#201743 0,transparent 34%),#0b1320}
+main > .process .process-inner{
+  width:min(var(--page-content),100%);
+  max-width:var(--page-content);
+  margin:0 auto;
+}
+main > .cases{background:radial-gradient(circle at 100% 0,#eee8ff 0,transparent 28%),#fbfaff}
+main > .contact{
+  margin-bottom:0;
+  background:radial-gradient(circle at 4% 0,#eee7ff 0,transparent 29%),radial-gradient(circle at 70% 120%,#e2d7ff 0,transparent 34%),#fbfaff;
+}
+.footer{
+  width:100%;
+  max-width:none;
+  margin:0;
+  border:0;
+  border-radius:0;
+  background:radial-gradient(circle at 85% 0,#332054 0,transparent 30%),linear-gradient(145deg,#111927 0%,#0a101a 72%);
+  box-shadow:none;
+}
+.footer .footer-inner{
+  width:min(var(--page-content),100%);
+  max-width:var(--page-content);
+  margin:0 auto;
+}
+@media(min-width:1121px){
+  .header{padding-inline:max(48px,calc((100vw - var(--page-content))/2 + 48px))}
+  main > .hero.hero-light{padding-inline:max(54px,calc((100vw - var(--page-content))/2 + 54px))}
+  main > .hero.hero-light .results-card{right:max(30px,calc((100vw - var(--page-content))/2 + 30px))}
+  main > .services,main > .cases{padding-inline:max(64px,calc((100vw - var(--page-content))/2 + 64px))}
+  main > .contact{padding-inline:max(72px,calc((100vw - var(--page-content))/2 + 72px))}
+}
+@media(max-width:900px){
+  .header,main,main > .hero.hero-light,main > .services,main > .process,main > .cases,main > .contact,.footer{
+    width:100%;
+    border-radius:0;
+  }
+}
+
+/* Stable hero composition inside the full-width page */
+.hero-inner{display:contents}
+@media(min-width:901px){
+  main > .hero.hero-light{
+    min-height:720px;
+    padding:0;
+    background-size:auto 100%;
+    background-position:80% center;
+    background-repeat:no-repeat;
+  }
+  .hero.hero-light .hero-inner{
+    position:relative;
+    display:block;
+    width:min(var(--page-content),100%);
+    min-height:720px;
+    margin:0 auto;
+    padding:48px 54px;
+  }
+  .hero.hero-light .hero-copy{min-height:624px}
+  .hero.hero-light .hero-media{
+    position:absolute;
+    inset:0;
+  }
+  .hero.hero-light .results-card{
+    right:30px;
+    bottom:30px;
+  }
+}
+@media(min-width:901px) and (max-width:1120px){
+  .hero.hero-light .hero-inner{
+    min-height:690px;
+    padding:40px;
+  }
+  .hero.hero-light .hero-copy{min-height:608px}
+  .hero.hero-light .results-card{right:24px;bottom:24px}
 }
