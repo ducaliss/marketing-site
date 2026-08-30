@@ -40,7 +40,7 @@ seafoodModal.addEventListener('close',()=>document.body.classList.remove('modal-
 document.querySelector('.seafood-modal-action').addEventListener('click',()=>seafoodModal.close());
 const legalContent={
   privacy:`
-    <p class="legal-draft">Редакция от 29 августа 2026 года</p>
+    <p class="legal-draft">Редакция от 30 августа 2026 года</p>
     <h2>Политика обработки персональных данных</h2>
     <p>Настоящая Политика определяет порядок обработки и защиты персональных данных посетителей сайта, на котором она опубликована. Политика применяется ко всем данным, которые оператор получает через форму обратной связи, при прямом обращении пользователя и в процессе технической работы сайта.</p>
 
@@ -60,7 +60,7 @@ const legalContent={
       <div><strong>Обработка заявки и обратная связь</strong><span>Имя, номер телефона или имя пользователя в Telegram, текст обращения, сведения о бизнесе и задаче.</span></div>
       <div><strong>Подготовка к возможному заключению договора</strong><span>Данные из обращения и сведения, которые пользователь дополнительно сообщает в ходе общения.</span></div>
       <div><strong>Работа и безопасность сайта</strong><span>IP-адрес, дата и время обращения, адрес запрошенной страницы, сведения о браузере и устройстве, технические журналы сервера.</span></div>
-      <div><strong>Аналитика посещаемости</strong><span>Будет осуществляться только после подключения аналитических систем, обновления этой Политики и настройки уведомления о cookie.</span></div>
+      <div><strong>Аналитика посещаемости</strong><span>Сведения о просмотренных страницах, действиях на сайте, устройстве, браузере, примерном регионе, источнике перехода и технических параметрах визита. Обрабатываются Яндекс Метрикой при посещении сайта.</span></div>
     </div>
     <p>Оператор не запрашивает специальные категории и биометрические персональные данные. Пользователю не следует указывать такие сведения, а также персональные данные третьих лиц, если у него отсутствует законное основание для их передачи.</p>
 
@@ -78,6 +78,7 @@ const legalContent={
 
     <h3>5. Хранение, поручение обработки и передача</h3>
     <p>Форма размещена на сайте <strong>marketolog-penza.ru</strong> и обрабатывается на виртуальном сервере российского хостинг-провайдера ООО «Бегет». Заявки направляются оператору по адресу <a href="mailto:ivan_muzenitov@mail.ru">ivan_muzenitov@mail.ru</a> с использованием российского почтового сервиса Mail.ru. Указанные технические поставщики привлекаются только в объёме, необходимом для размещения сайта и доставки заявки.</p>
+    <p>Для анализа посещаемости применяется сервис Яндекс Метрика, предоставляемый ООО «ЯНДЕКС». Сервис получает технические сведения о визите и действиях на сайте в объёме, определяемом настройками счётчика и условиями Яндекс Метрики. Оператор использует полученные отчёты в обезличенном и агрегированном виде для оценки работы сайта.</p>
     <p>Технические журналы безопасности хранятся на сервере в Российской Федерации не более 30 календарных дней, если более длительный срок не требуется для расследования инцидента или исполнения требований законодательства.</p>
     <p>Публикация и распространение персональных данных не осуществляются. Трансграничная передача данных в рамках формы обратной связи не планируется. Первичный сбор и хранение данных граждан Российской Федерации должны осуществляться с использованием баз данных, находящихся на территории Российской Федерации.</p>
 
@@ -95,7 +96,9 @@ const legalContent={
     <p>Оператор принимает необходимые правовые, организационные и технические меры: ограничивает доступ к данным, использует защищённое соединение HTTPS, контролирует доступ к почте и серверу, обновляет программное обеспечение и удаляет данные после истечения срока обработки. При инцидентах оператор действует в порядке и сроки, установленные законодательством.</p>
 
     <h3>9. Cookie и системы аналитики</h3>
-    <p>В текущей версии сайта Яндекс Метрика и VK Pixel не подключены. До их подключения оператор обновит эту Политику, укажет используемые технологии и добавит механизм получения согласия на необязательные cookie. Ссылки на Telegram и MAX ведут на внешние сервисы, обработка данных в которых регулируется документами соответствующих владельцев.</p>
+    <p>На сайте подключена Яндекс Метрика, счётчик № 112086047, с функциями Вебвизора, карты кликов, карты скроллинга и аналитики форм. Метрика может использовать cookie и получать сведения об устройстве и браузере, IP-адресе, примерном регионе, источнике перехода, просмотренных страницах и действиях посетителя. Эти сведения используются для анализа посещаемости и улучшения сайта.</p>
+    <p>Код Метрики загружается автоматически при открытии сайта. Поля формы отмечены техническим запретом записи содержимого Вебвизором. Посетитель может ограничить использование cookie в настройках браузера или воспользоваться блокировщиком Яндекс Метрики. Не следует передавать персональные данные в адресах страниц, UTM-метках и иных параметрах ссылок.</p>
+    <p>Подробнее об обработке данных сервисом Яндекс Метрика можно узнать в <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Политике конфиденциальности Яндекса</a> и <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener noreferrer">условиях использования Яндекс Метрики</a>. VK Pixel на сайте не подключён. Ссылки на Telegram и MAX ведут на внешние сервисы, обработка данных в которых регулируется документами соответствующих владельцев.</p>
 
     <h3>10. Изменение Политики</h3>
     <p>Оператор вправе обновлять Политику при изменении сайта, состава сервисов или законодательства. Новая редакция действует с момента публикации на сайте, если в ней не указан иной срок.</p>
@@ -212,6 +215,39 @@ legalModalContent.addEventListener('click',event=>{
 document.querySelector('.legal-modal-close').addEventListener('click',()=>legalModal.close());
 legalModal.addEventListener('click',event=>{if(event.target===legalModal)legalModal.close()});
 legalModal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+
+const METRIKA_ID=112086047;
+let metrikaLoaded=false;
+const loadYandexMetrika=()=>{
+  if(metrikaLoaded)return;
+  metrikaLoaded=true;
+  window.ym=window.ym||function(){(window.ym.a=window.ym.a||[]).push(arguments)};
+  window.ym.l=Date.now();
+  const script=document.createElement('script');
+  script.async=true;
+  script.src=`https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}`;
+  document.head.appendChild(script);
+  window.ym(METRIKA_ID,'init',{
+    webvisor:true,
+    clickmap:true,
+    accurateTrackBounce:true,
+    trackLinks:true
+  });
+};
+const reachMetrikaGoal=(goal,params)=>{
+  if(typeof window.ym!=='function')return;
+  window.ym(METRIKA_ID,'reachGoal',goal,params||{});
+};
+loadYandexMetrika();
+
+document.querySelectorAll('a[href^="tel:"]').forEach(link=>link.addEventListener('click',()=>reachMetrikaGoal('phone_click')));
+document.querySelectorAll('a[href^="https://t.me/"]').forEach(link=>link.addEventListener('click',()=>reachMetrikaGoal('telegram_click')));
+document.querySelectorAll('a[href^="https://max.ru/"]').forEach(link=>link.addEventListener('click',()=>reachMetrikaGoal('max_click')));
+document.querySelectorAll('a[href="#contact"]').forEach(link=>{
+  if(link.closest('.nav,.footer-nav'))return;
+  link.addEventListener('click',()=>reachMetrikaGoal('consultation_click'));
+});
+
 const menu=document.querySelector('#nav');const menuButton=document.querySelector('.menu-toggle');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
 const leadForm=document.querySelector('#lead-form');
 const contactField=leadForm.elements.contact;
@@ -241,6 +277,7 @@ leadForm.addEventListener('submit',async event=>{
     if(!response.ok||!data.ok)throw new Error(data.message||'Не удалось отправить заявку.');
     status.className='form-status success';
     status.textContent='Заявка отправлена. Я свяжусь с вами в ближайшее время.';
+    reachMetrikaGoal('lead_form_success');
     leadForm.reset();
     contactField.setCustomValidity('');
   }catch(error){
