@@ -60,7 +60,7 @@ const legalContent={
       <div><strong>Обработка заявки и обратная связь</strong><span>Имя, номер телефона или имя пользователя в Telegram, текст обращения, сведения о бизнесе и задаче.</span></div>
       <div><strong>Подготовка к возможному заключению договора</strong><span>Данные из обращения и сведения, которые пользователь дополнительно сообщает в ходе общения.</span></div>
       <div><strong>Работа и безопасность сайта</strong><span>IP-адрес, дата и время обращения, адрес запрошенной страницы, сведения о браузере и устройстве, технические журналы сервера.</span></div>
-      <div><strong>Аналитика посещаемости</strong><span>Сведения о просмотренных страницах, действиях на сайте, устройстве, браузере, примерном регионе, источнике перехода и технических параметрах визита. Обрабатываются Яндекс Метрикой при посещении сайта.</span></div>
+      <div><strong>Аналитика посещаемости</strong><span>Сведения о просмотренных страницах, действиях на сайте, устройстве, браузере, примерном регионе, источнике перехода и технических параметрах визита. Обрабатываются Яндекс Метрикой после согласия посетителя.</span></div>
     </div>
     <p>Оператор не запрашивает специальные категории и биометрические персональные данные. Пользователю не следует указывать такие сведения, а также персональные данные третьих лиц, если у него отсутствует законное основание для их передачи.</p>
 
@@ -97,7 +97,7 @@ const legalContent={
 
     <h3>9. Cookie и системы аналитики</h3>
     <p>На сайте подключена Яндекс Метрика, счётчик № 112086047, с функциями Вебвизора, карты кликов, карты скроллинга и аналитики форм. Метрика может использовать cookie и получать сведения об устройстве и браузере, IP-адресе, примерном регионе, источнике перехода, просмотренных страницах и действиях посетителя. Эти сведения используются для анализа посещаемости и улучшения сайта.</p>
-    <p>Код Метрики загружается автоматически при открытии сайта. Поля формы отмечены техническим запретом записи содержимого Вебвизором. Посетитель может ограничить использование cookie в настройках браузера или воспользоваться блокировщиком Яндекс Метрики. Не следует передавать персональные данные в адресах страниц, UTM-метках и иных параметрах ссылок.</p>
+    <p>Код Метрики загружается только после нажатия кнопки «Принять» в уведомлении об аналитике. До согласия счётчик, Вебвизор и связанные с ними cookie не запускаются. Выбор сохраняется в localStorage браузера, чтобы уведомление не показывалось повторно. Поля формы отмечены техническим запретом записи содержимого Вебвизором. Не следует передавать персональные данные в адресах страниц, UTM-метках и иных параметрах ссылок.</p>
     <p>Подробнее об обработке данных сервисом Яндекс Метрика можно узнать в <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Политике конфиденциальности Яндекса</a> и <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener noreferrer">условиях использования Яндекс Метрики</a>. VK Pixel на сайте не подключён. Ссылки на Telegram и MAX ведут на внешние сервисы, обработка данных в которых регулируется документами соответствующих владельцев.</p>
 
     <h3>10. Изменение Политики</h3>
@@ -238,7 +238,25 @@ const reachMetrikaGoal=(goal,params)=>{
   if(typeof window.ym!=='function')return;
   window.ym(METRIKA_ID,'reachGoal',goal,params||{});
 };
-loadYandexMetrika();
+const ANALYTICS_CONSENT_KEY='marketing-site-analytics-consent-v1';
+const cookieConsent=document.querySelector('#cookie-consent');
+const cookieConsentAccept=cookieConsent.querySelector('.cookie-consent-accept');
+const cookieConsentDetails=cookieConsent.querySelector('.cookie-consent-details');
+const forceCookiePreview=new URLSearchParams(window.location.search).has('cookie-preview');
+const hasAnalyticsConsent=()=>{
+  try{return window.localStorage.getItem(ANALYTICS_CONSENT_KEY)==='accepted'}catch{return false}
+};
+const rememberAnalyticsConsent=()=>{
+  try{window.localStorage.setItem(ANALYTICS_CONSENT_KEY,'accepted')}catch{}
+};
+cookieConsentAccept.addEventListener('click',()=>{
+  rememberAnalyticsConsent();
+  cookieConsent.hidden=true;
+  loadYandexMetrika();
+});
+cookieConsentDetails.addEventListener('click',()=>showLegalDocument('privacy'));
+if(hasAnalyticsConsent()&&!forceCookiePreview)loadYandexMetrika();
+else cookieConsent.hidden=false;
 
 document.querySelectorAll('a[href^="tel:"]').forEach(link=>link.addEventListener('click',()=>reachMetrikaGoal('phone_click')));
 document.querySelectorAll('a[href^="https://t.me/"]').forEach(link=>link.addEventListener('click',()=>reachMetrikaGoal('telegram_click')));
