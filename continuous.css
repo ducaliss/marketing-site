@@ -354,6 +354,42 @@ body > main > .contact{
 .cookie-consent-copy strong{font-size:17px;line-height:1.25;letter-spacing:-.02em}
 .cookie-consent-copy p{max-width:450px;margin:0;color:#666b78;font-size:13px;line-height:1.55}
 .cookie-consent-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:17px}
+
+/* Stable process icons: avoid platform-dependent Unicode/emoji rendering. */
+.process .steps li::before{content:none!important}
+.process .steps .step-icon{
+  position:static;
+  display:grid;
+  place-items:center;
+  width:58px;
+  height:58px;
+  margin:0 0 34px;
+  border:1px solid #9c84cb65;
+  border-radius:16px;
+  background:#24263b;
+  color:#dcd4f1;
+  box-shadow:inset 0 0 20px #8f68ef1f;
+  font-style:normal;
+  flex:0 0 auto;
+}
+.process .steps .step-icon svg{
+  display:block;
+  width:27px;
+  height:27px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.process .steps li:last-child .step-icon{
+  border-color:#ffffff4d;
+  background:#ffffff18;
+  color:#fff;
+}
+@media(max-width:700px){
+  .process .steps .step-icon{margin-bottom:28px}
+}
 .cookie-consent-actions button{
   min-height:44px;
   padding:0 18px;
