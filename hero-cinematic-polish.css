@@ -1,0 +1,45 @@
+/* Final refinements to the selected centred hero. No geometry or image changes. */
+html:not([data-hero-layout="split"]) .hero-cinematic-process {position:relative;isolation:isolate;width:min(100%,1120px)}
+html:not([data-hero-layout="split"]) .hero-cinematic-process::before {content:"";position:absolute;z-index:-1;inset:-20px -22px -14px;background:linear-gradient(180deg,#08091100,#08091170);pointer-events:none}
+html:not([data-hero-layout="split"]) .hero-cinematic-process h2 {font-size:18px}
+html:not([data-hero-layout="split"]) .hero-cinematic-process p {color:#eee9f3;font-size:16px;line-height:1.55}
+html:not([data-hero-layout="split"]) .hero-cinematic-number {color:#d5cddd;font-size:14px}
+@media(min-width:901px) {
+  html:not([data-hero-layout="split"]) .homepage-cinematic .brand-mark {width:42px;height:42px;font-size:27px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .brand-copy strong {font-size:20px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .nav {gap:28px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .nav a {font-size:16px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .phone {font-size:19px}
+  html:not([data-hero-layout="split"]) body.homepage-cinematic > main > .services {padding-top:84px!important}
+}
+@media(min-width:621px) and (max-width:900px) {
+  html:not([data-hero-layout="split"]) body.homepage-cinematic > main > .services {padding-top:64px!important}
+}
+@media(min-width:901px) and (max-width:1100px) {
+  html:not([data-hero-layout="split"]) .homepage-cinematic .brand-copy strong {font-size:17px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .nav {gap:20px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .nav a {font-size:14px}
+  html:not([data-hero-layout="split"]) .homepage-cinematic .header .phone {font-size:16px}
+}
+@media(max-width:620px) {
+  html:not([data-hero-layout="split"]) .hero-cinematic-process {gap:14px}
+  html:not([data-hero-layout="split"]) .hero-cinematic-process h2 {font-size:15px}
+  html:not([data-hero-layout="split"]) .hero-cinematic-process p {font-size:13px}
+  html:not([data-hero-layout="split"]) .hero-cinematic-number {font-size:13px}
+  html:not([data-hero-layout="split"]) .hero-cinematic-process::before {inset:-18px -20px -12px}
+  html:not([data-hero-layout="split"]) body.homepage-cinematic > main > .services {padding-top:52px!important}
+}
+
+/* One clipped light wave, matching the reference's six-second rhythm. */
+.hero-cinematic-cta {position:relative;isolation:isolate;overflow:hidden}
+.hero-cinematic-cta > span {position:relative;z-index:1}
+.hero-cinematic-cta::after {content:"";position:absolute;z-index:0;top:-125%;left:-150%;width:200%;height:350%;border-radius:50%;background:#ffffff80;transform:scale(0);opacity:0;pointer-events:none;animation:hero-cta-wave 6s linear infinite;animation-play-state:paused}
+.hero-cinematic-cta.is-motion-active::after {animation-play-state:running}
+.hero-cinematic-cta:hover::after,.hero-cinematic-cta:focus-visible::after {animation:none;opacity:0}
+@keyframes hero-cta-wave {
+  0% {transform:scale(0);opacity:.8}
+  20%,100% {transform:scale(2.5);opacity:0}
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero-cinematic-cta::after {display:none;animation:none}
+}

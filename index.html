@@ -23,13 +23,19 @@
   <link rel="icon" href="https://marketolog-penza.ru/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="alternate icon" href="https://marketolog-penza.ru/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://marketolog-penza.ru/apple-touch-icon.png" sizes="180x180">
-  <link rel="preload" as="image" href="images/hero-laptop-analytics-v6-clean.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-workspace-cinematic-v1.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="font" href="fonts/manrope-variable.ttf" type="font/ttf" crossorigin>
   <title>Специалист по интернет-рекламе в Пензе — Иван Музенитов</title>
   <link rel="stylesheet" href="font.css?v=20260829-prelaunch1">
   <link rel="stylesheet" href="style.css?v=20260829-prelaunch1">
   <link rel="stylesheet" href="reference.css?v=20260829-prelaunch1">
   <link rel="stylesheet" href="continuous.css?v=20260903-icons1">
+  <link rel="stylesheet" href="seo-services.css?v=20261006-footer1">
+  <link rel="stylesheet" href="hero-cinematic.css?v=20261022-1">
+  <link rel="stylesheet" href="hero-cinematic-split.css?v=20261022-2">
+  <link rel="stylesheet" href="hero-cinematic-polish.css?v=20261022-1">
+  <script src="hero-cinematic-motion.js?v=20261022-1" defer></script>
+  <script>if(new URLSearchParams(location.search).get('preview')==='cinematic-left')document.documentElement.dataset.heroLayout='split';</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,7 +60,9 @@
           "Яндекс Директ",
           "Реклама в Telegram",
           "Интернет-маркетинг",
-          "Маркетинговый аудит"
+          "Маркетинговый аудит",
+          "Копирайтинг",
+          "Ведение социальных сетей"
         ],
         "sameAs": [
           "https://t.me/penzatut",
@@ -83,7 +91,9 @@
           "Комплексное ведение рекламы",
           "Реклама в Telegram",
           "Профессиональная маркетинговая консультация",
-          "Маркетинговый аудит"
+          "Маркетинговый аудит",
+          "Копирайтинг",
+          "Ведение социальных сетей"
         ],
         "priceRange": "По договорённости"
       },
@@ -175,36 +185,39 @@
   }
   </script>
 </head>
-<body>
+<body class="homepage-cinematic">
   <header class="header">
     <a class="brand" href="#top" aria-label="На главную"><span class="brand-mark">M</span><span class="brand-copy"><strong>Иван Музенитов</strong><small>Специалист по интернет-рекламе</small></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Меню</button>
     <nav class="nav" id="nav" aria-label="Основная навигация">
       <a href="#services">Услуги</a><a href="#process">Этапы работы</a><a href="#cases">Кейсы</a><a href="#contact">Контакты</a>
     </nav>
-    <a class="phone" href="tel:+79875149977"><span class="phone-icon" aria-hidden="true">☎</span><span class="phone-number">+7-987-514-99-77</span><span class="phone-arrow" aria-hidden="true">→</span></a>
+    <a class="phone" href="tel:+79875149977"><span class="phone-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.79a2 2 0 0 1-.45 2.11L8.09 9.89a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.34 1.83.57 2.79.69A2 2 0 0 1 22 16.92Z"/></svg></span><span class="phone-number">+7-987-514-99-77</span><span class="phone-arrow" aria-hidden="true">→</span></a>
   </header>
 
   <main id="top">
-    <section class="hero section hero-light">
-      <div class="hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Специалист по интернет-рекламе в Пензе и по всей России</p>
-        <h1>Помогаю бизнесу<br><span>привлекать клиентов</span></h1>
-        <p class="hero-lead">через ВКонтакте, Яндекс Директ и Telegram</p>
-        <p class="experience"><span></span>Работаю в интернет-маркетинге с 2019 года</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#contact">Получить бесплатную консультацию <span>→</span></a>
-          <a class="button hero-secondary" href="#services">Посмотреть услуги</a>
+    <section class="hero section hero-cinematic" aria-labelledby="hero-title">
+      <img class="hero-cinematic-background" src="images/hero-workspace-cinematic-v1.webp" alt="" width="1859" height="846" fetchpriority="high" decoding="async">
+      <div class="hero-cinematic-inner">
+        <div class="hero-cinematic-copy">
+          <h1 id="hero-title">Помогаю бизнесу<br> привлекать клиентов</h1>
+          <p class="hero-cinematic-lead">через ВКонтакте, Яндекс Директ и Telegram</p>
+          <p class="hero-cinematic-experience">Работаю в интернет-маркетинге с 2019 года</p>
+          <div class="hero-cinematic-actions">
+            <a class="hero-cinematic-cta" href="#contact"><span>Получить бесплатную консультацию</span></a>
+            <a class="hero-cinematic-secondary" href="#services">Посмотреть услуги <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></a>
+          </div>
         </div>
-        <article class="hero-consult">
-          <span class="consult-icon">✦</span>
-          <div class="consult-copy"><h2>Начнём со знакомства</h2><p>Разберём вашу задачу, выберем подходящий канал и определим первый шаг.</p><a href="#contact">Обсудить проект&nbsp;&nbsp; →</a></div>
-        </article>
-      </div>
-      <div class="hero-media">
-        <aside class="results-card"><h2>Результаты, которые<br>приносят рост</h2><ul><li>Анализируем</li><li>Тестируем гипотезы</li><li>Находим рабочие связки</li><li>Масштабируем результаты</li></ul></aside>
-      </div>
+        <ul class="hero-cinematic-benefits" aria-label="Преимущества сотрудничества">
+          <li><svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="34" height="32" rx="4"/><path d="M7 20h34M16 5v10M32 5v10M16 27h.01M24 27h.01M32 27h.01M16 35h.01M24 35h.01M32 35h.01"/></svg><span>С 2019 года<br> в маркетинге</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M39 22a17 17 0 1 1-13-15M31 22a9 9 0 1 1-9-7M22 24 37 9M34 5v8h8"/></svg><span>Подбор каналов<br> под задачу</span></li>
+          <li><svg aria-hidden="true" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M28 5H12a4 4 0 0 0-4 4v30a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V17L28 5Z"/><path d="M28 5v12h12M16 24h8M16 31h16M16 37h10"/></svg><span>Понятная<br> отчётность</span></li>
+        </ul>
+        <ol class="hero-cinematic-process" aria-label="Подход к работе">
+          <li><span class="hero-cinematic-number" aria-hidden="true">01</span><div><h2>Анализ задачи</h2><p>Погружаюсь в ваш бизнес<br>и цели</p></div></li>
+          <li><span class="hero-cinematic-number" aria-hidden="true">02</span><div><h2>Настройка рекламы</h2><p>Запускаю рекламные кампании<br>под вашу аудиторию</p></div></li>
+          <li><span class="hero-cinematic-number" aria-hidden="true">03</span><div><h2>Оптимизация</h2><p>Анализирую результаты<br>и улучшаю показатели</p></div></li>
+        </ol>
       </div>
     </section>
 
@@ -219,7 +232,7 @@
       <div class="service-group-head secondary-head"><h3>Дополнительные услуги</h3><p>Стратегия, консультации и контент</p></div>
       <div class="service-grid secondary-services">
         <article class="service-card light wide"><div class="mini-service-icon">★</div><h3>Профессиональная консультация<br>и разбор вашего бизнеса</h3><p class="accent-text">Маркетинговая стратегия, аудит и перспективы.</p><p>Глубокий анализ бизнеса и продвижения, рекламных каналов, аудиторий, бюджета, сайта, контента, PR и дальнейших планов действий.</p><button class="details" data-service="audit">Подробнее <span>→</span></button><a class="button paid-button" href="#contact">Записаться на платную консультацию</a><span class="consult-decor" aria-hidden="true"></span></article>
-        <article class="service-card image-card"><div class="mini-service-icon video-icon">▶</div><div><h3>Видеоролики<br>для бизнеса</h3><p>Создание рекламных и имиджевых видеороликов совместно с профессиональным видеографом.</p><button class="details" data-service="video">Подробнее <span>→</span></button></div></article>
+        <article class="service-card image-card"><div class="mini-service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 5 5-12 12-6 1 1-6Z"/><path d="m14 5 5 5"/></svg></div><div><h3>Копирайтинг и<br>ведение соцсетей</h3><p>Разработка контент-плана под ваши задачи, подготовка текстов и кросспостинг по всем вашим социальным сетям.</p><button class="details" data-service="copywriting">Подробнее <span>→</span></button></div></article>
       </div>
     </section>
 
@@ -319,6 +332,16 @@
         </div>
       </div>
 
+      <nav class="footer-service-links" aria-label="Подробнее об услугах">
+        <p class="footer-label">Подробнее об услугах</p>
+        <div>
+          <a href="targetirovannaya-reklama-penza.html">Таргетированная реклама</a>
+          <a href="yandex-direct-penza.html">Яндекс Директ и услуги директолога</a>
+          <a href="smm-penza.html">SMM и продвижение в соцсетях</a>
+          <a href="reklama-telegram-penza.html">Реклама в Telegram</a>
+        </div>
+      </nav>
+
       <div class="footer-details">
         <section class="footer-identity" aria-label="Информация об исполнителе">
           <p class="footer-label">Исполнитель</p>
@@ -331,9 +354,9 @@
         </dl>
         <div class="footer-documents">
           <p class="footer-label">Документы</p>
-          <button type="button" data-legal-doc="privacy">Политика обработки данных <span>↗</span></button>
-          <button type="button" data-legal-doc="terms">Пользовательское соглашение <span>↗</span></button>
-          <button type="button" data-legal-doc="consent">Согласие на обработку данных <span>↗</span></button>
+          <button type="button" data-legal-doc="privacy">Политика обработки данных <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a681ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
+          <button type="button" data-legal-doc="terms">Пользовательское соглашение <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a681ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
+          <button type="button" data-legal-doc="consent">Согласие на обработку данных <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a681ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></button>
         </div>
       </div>
 
@@ -846,6 +869,6 @@
     </div>
   </section>
   <button class="back-to-top" type="button" aria-label="Вернуться в начало страницы">↑</button>
-  <script src="script.js?v=20260831-cookie1"></script>
+  <script src="script.js?v=20261006-copywriting1"></script>
 </body>
 </html>
