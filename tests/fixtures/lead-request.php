@@ -12,10 +12,10 @@ if (!function_exists('mail')) {
 }
 $case = $argv[1] ?? '';
 $_SERVER = ['REQUEST_METHOD' => 'POST', 'HTTP_HOST' => 'localhost', 'REMOTE_ADDR' => '192.0.2.' . (string) (10 + (int) ($argv[2] ?? 0))];
-$_POST = ['name' => 'ТЕСТ', 'contact' => '@consent_test', 'message' => 'Синтетическая проверка без отправки письма', 'personal_data_consent' => 'yes', 'consent_version' => '2026-10-22-v1'];
+$_POST = ['name' => 'ТЕСТ', 'contact' => '@consent_test', 'message' => 'Синтетическая проверка без отправки письма', 'personal_data_consent' => 'yes', 'consent_version' => '2026-10-22-v2'];
 if ($case === 'missing') unset($_POST['consent_version']);
-if ($case === 'old') $_POST['consent_version'] = '2026-08-29';
-if ($case === 'array') $_POST['consent_version'] = ['2026-10-22-v1'];
+if ($case === 'old') $_POST['consent_version'] = '2026-10-22-v1';
+if ($case === 'array') $_POST['consent_version'] = ['2026-10-22-v2'];
 if ($case === 'path') $_POST['consent_version'] = '../../etc/passwd';
 if ($case === 'unchecked') $_POST['personal_data_consent'] = '';
 if ($case === 'contact') $_POST['contact'] = 'invalid';

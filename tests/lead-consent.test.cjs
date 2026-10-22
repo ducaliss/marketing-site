@@ -16,6 +16,18 @@ test('displayed consent is identical to immutable archived text',()=>{
   assert.equal(shown,saved);
   assert(shown.includes(version));assert(shown.includes(archivePath));
 });
+test('address is retained as ordinary text at the end, not in the opening card',()=>{
+  const previous=fs.readFileSync(path.join(root,'legal/lead-consent-2026-10-22-v1.html'));
+  assert.equal(crypto.createHash('sha256').update(previous).digest('hex'),'6e9b1fa7364039c51e6b79f24943b245483283f2612a26366bcb1a9794db6a32');
+  const address=previous.toString('utf8').match(/<span>Адрес оператора<\/span><strong>([^<]+)<\/strong>/)[1];
+  const shown=js.match(/  consent:`\n([\s\S]*?)\n  `\n};/)[1];
+  const summary=shown.match(/<div class="legal-summary">([\s\S]*?)\n    <\/div>/)[1];
+  assert(!summary.includes(address));
+  assert(shown.includes('<p>Адрес оператора: '+address+'.</p>'));
+  assert(shown.indexOf(address)>shown.indexOf('<h3>7. Реквизиты оператора</h3>'));
+  assert(js.match(/  privacy:`([\s\S]*?)\n  `,/)[1].includes(address));
+  assert(js.match(/  terms:`([\s\S]*?)\n  `,/)[1].includes(address));
+});
 test('server binds submitted version to a fixed archived file and exact byte hash',()=>{
   assert.equal(php.match(/const LEAD_CONSENT_VERSION = '([^']+)'/)[1],version);
   assert.equal(php.match(/const LEAD_CONSENT_ARCHIVE = '([^']+)'/)[1],archivePath);

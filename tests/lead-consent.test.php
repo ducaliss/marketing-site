@@ -16,7 +16,7 @@ function child(array $command): array
     $err = stream_get_contents($pipes[2]); fclose($pipes[2]);
     return [proc_close($process), $out, $err];
 }
-$evidence = leadConsentEvidence('2026-10-22-v1');
+$evidence = leadConsentEvidence('2026-10-22-v2');
 check($evidence !== null && $evidence['version'] === LEAD_CONSENT_VERSION, 'known revision');
 check($evidence['sha256'] === hash_file('sha256', dirname(__DIR__) . '/' . LEAD_CONSENT_ARCHIVE), 'archive byte integrity');
 check(leadConsentEvidence('') === null && leadConsentEvidence('../../etc/passwd') === null, 'unknown versions rejected');
@@ -40,7 +40,7 @@ foreach (['valid', 'missing', 'old', 'array', 'path', 'unchecked', 'contact'] as
 // Use a private mirror to prove corrupt or missing archives fail closed.
 mkdir($temporary . '/api'); mkdir($temporary . '/legal');
 copy(dirname(__DIR__) . '/api/lead-consent.php', $temporary . '/api/lead-consent.php');
-$probe = 'require ' . var_export($temporary . '/api/lead-consent.php', true) . '; try { leadConsentEvidence("2026-10-22-v1"); exit(3); } catch (RuntimeException $e) { echo "ARCHIVE_REJECTED"; }';
+$probe = 'require ' . var_export($temporary . '/api/lead-consent.php', true) . '; try { leadConsentEvidence("2026-10-22-v2"); exit(3); } catch (RuntimeException $e) { echo "ARCHIVE_REJECTED"; }';
 foreach (['missing', 'corrupt'] as $state) {
     if ($state === 'corrupt') file_put_contents($temporary . '/' . LEAD_CONSENT_ARCHIVE, 'modified test archive');
     [$exit, $out] = child([PHP_BINARY, '-r', $probe]);

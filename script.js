@@ -38,8 +38,8 @@ document.querySelector('.seafood-modal-close').addEventListener('click',()=>seaf
 seafoodModal.addEventListener('click',event=>{if(event.target===seafoodModal)seafoodModal.close()});
 seafoodModal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
 document.querySelector('.seafood-modal-action').addEventListener('click',()=>seafoodModal.close());
-const LEAD_CONSENT_VERSION='2026-10-22-v1';
-const LEAD_CONSENT_ARCHIVE='legal/lead-consent-2026-10-22-v1.html';
+const LEAD_CONSENT_VERSION='2026-10-22-v2';
+const LEAD_CONSENT_ARCHIVE='legal/lead-consent-2026-10-22-v2.html';
 const legalContent={
   privacy:`
     <p class="legal-draft">Редакция от 22 октября 2026 года</p>
@@ -162,14 +162,13 @@ const legalContent={
     <p class="legal-note">Соглашение вступает в силу с момента публикации на сайте marketolog-penza.ru и действует до размещения новой редакции.</p>
   `,
   consent:`
-    <p class="legal-draft">Редакция от 22 октября 2026 года · версия 2026-10-22-v1 · отдельное согласие пользователя</p>
+    <p class="legal-draft">Редакция от 22 октября 2026 года · версия 2026-10-22-v2 · отдельное согласие пользователя</p>
     <h2>Согласие на обработку персональных данных</h2>
     <p>Устанавливая отдельную отметку под формой и нажимая кнопку «Отправить заявку», я свободно, своей волей и в своём интересе даю согласие оператору персональных данных:</p>
 
     <div class="legal-summary">
       <div><span>Оператор</span><strong>Музенитов Иван Георгиевич</strong></div>
       <div><span>ИНН</span><strong>582102782490</strong></div>
-      <div><span>Адрес оператора</span><strong>440067, Пензенская область, р. п. Лунино, ул. Ломоносова, д. 50</strong></div>
       <div><span>Для отзыва</span><strong><a href="mailto:ivan-muzenitov@yandex.ru">ivan-muzenitov@yandex.ru</a></strong></div>
     </div>
 
@@ -202,10 +201,13 @@ const legalContent={
     <h3>6. Отзыв согласия</h3>
     <p>Согласие можно отозвать, направив письмо на <a href="mailto:ivan-muzenitov@yandex.ru">ivan-muzenitov@yandex.ru</a> с темой «Отзыв согласия на обработку персональных данных». В запросе необходимо указать контакт, использованный при отправке заявки. После получения отзыва оператор прекратит обработку и удалит данные в установленный законом срок, если отсутствует иное законное основание для их сохранения.</p>
 
+    <h3>7. Реквизиты оператора</h3>
+    <p>Адрес оператора: 440067, Пензенская область, р. п. Лунино, ул. Ломоносова, д. 50.</p>
+
     <p>Я подтверждаю, что указанные в форме данные принадлежат мне либо я имею законное основание для их передачи, а также что ознакомился с Политикой обработки персональных данных.</p>
 
     <p class="legal-note">Согласие фиксируется только после установки отдельной отметки под формой и отправки заявки. Чекбокс не отмечается заранее. Номер редакции, ссылка на архив, контрольная сумма архивного файла, дата, время и IP-адрес включаются в письмо с заявкой и хранятся вместе с ней в пределах указанных сроков.</p>
-    <p><a href="https://marketolog-penza.ru/legal/lead-consent-2026-10-22-v1.html" target="_blank" rel="noopener noreferrer">Архив редакции согласия 2026-10-22-v1</a></p>
+    <p><a href="https://marketolog-penza.ru/legal/lead-consent-2026-10-22-v2.html" target="_blank" rel="noopener noreferrer">Архив редакции согласия 2026-10-22-v2</a></p>
   `
 };
 const legalModal=document.querySelector('#legal-modal');
