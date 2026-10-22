@@ -95,7 +95,7 @@ test('tag failure can be retried without duplicate initialization',()=>{
 test('all public landing pages share revised analytics and legal implementation',()=>{
   for(const file of ['index.html','targetirovannaya-reklama-penza.html','yandex-direct-penza.html','smm-penza.html','reklama-telegram-penza.html']){
     const html=fs.readFileSync(path.join(__dirname,'..',file),'utf8');
-    assert(html.includes('script.js?v=20261022-location1'),file);
+    assert(html.includes('script.js?v=20261022-leadconsent1'),file);
     assert(html.includes('continuous.css?v=20261022-privacy1'),file);
     assert(html.includes('class="footer-documents"'),file);
     assert(html.includes('class="ym-disable-keys"'),file);

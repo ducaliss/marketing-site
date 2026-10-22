@@ -38,6 +38,8 @@ document.querySelector('.seafood-modal-close').addEventListener('click',()=>seaf
 seafoodModal.addEventListener('click',event=>{if(event.target===seafoodModal)seafoodModal.close()});
 seafoodModal.addEventListener('close',()=>document.body.classList.remove('modal-open'));
 document.querySelector('.seafood-modal-action').addEventListener('click',()=>seafoodModal.close());
+const LEAD_CONSENT_VERSION='2026-10-22-v1';
+const LEAD_CONSENT_ARCHIVE='legal/lead-consent-2026-10-22-v1.html';
 const legalContent={
   privacy:`
     <p class="legal-draft">Редакция от 22 октября 2026 года</p>
@@ -75,6 +77,7 @@ const legalContent={
     <h3>4. Действия с данными и способы обработки</h3>
     <p>Оператор может осуществлять сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, предоставление в предусмотренных законом случаях, блокирование, удаление и уничтожение данных. Обработка ведётся смешанным способом: с использованием средств автоматизации и без их использования.</p>
     <p>Источник данных — непосредственно пользователь либо технические журналы сайта. Решения, порождающие юридические последствия для пользователя, исключительно на основании автоматизированной обработки не принимаются.</p>
+    <p>Для подтверждения согласия при отправке заявки в письмо включаются отметка согласия, дата и время, IP-адрес, номер редакции согласия, ссылка на её архив и контрольная сумма архивного файла SHA-256. Эти сведения хранятся вместе с заявкой в пределах сроков, указанных в разделе 6; отдельная бессрочная база подтверждений не создаётся. Запись версии фиксирует, какой текст был представлен при отправке, но сама по себе не подтверждает личность посетителя или факт прочтения документа.</p>
 
     <h3>5. Хранение, поручение обработки и передача</h3>
     <p>Форма размещена на сайте <strong>marketolog-penza.ru</strong> и обрабатывается на виртуальном сервере ООО «Бегет», расположенном в Санкт-Петербурге, Российская Федерация (локация SPB в панели провайдера; проверено 22 октября 2026 года). Обработчик формы принимает имя, контакт, текст обращения, IP-адрес, дату, время и отметку согласия, формирует письмо и передаёт его оператору. Отдельная база заявок в приложении сайта не создаётся.</p>
@@ -159,7 +162,7 @@ const legalContent={
     <p class="legal-note">Соглашение вступает в силу с момента публикации на сайте marketolog-penza.ru и действует до размещения новой редакции.</p>
   `,
   consent:`
-    <p class="legal-draft">Редакция от 29 августа 2026 года · отдельное согласие пользователя</p>
+    <p class="legal-draft">Редакция от 22 октября 2026 года · версия 2026-10-22-v1 · отдельное согласие пользователя</p>
     <h2>Согласие на обработку персональных данных</h2>
     <p>Устанавливая отдельную отметку под формой и нажимая кнопку «Отправить заявку», я свободно, своей волей и в своём интересе даю согласие оператору персональных данных:</p>
 
@@ -191,7 +194,7 @@ const legalContent={
     <p>Я разрешаю сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование, предоставление техническим поставщикам в необходимом объёме, блокирование, удаление и уничтожение данных. Обработка может выполняться с использованием средств автоматизации и без них.</p>
 
     <h3>4. Доставка заявки</h3>
-    <p>Заявка обрабатывается на виртуальном сервере российского хостинг-провайдера ООО «Бегет» и направляется оператору по адресу <a href="mailto:ivan_muzenitov@mail.ru">ivan_muzenitov@mail.ru</a> с использованием российского почтового сервиса Mail.ru.</p>
+    <p>Заявка обрабатывается на виртуальном сервере ООО «Бегет» в Санкт-Петербурге, Российская Федерация, и направляется оператору по адресу <a href="mailto:ivan_muzenitov@mail.ru">ivan_muzenitov@mail.ru</a> с использованием сервиса Почта Mail, предоставляемого ООО «ВК». Подробности обработки привлечёнными поставщиками изложены в Политике обработки персональных данных сайта.</p>
 
     <h3>5. Срок согласия</h3>
     <p>Согласие действует до достижения целей обработки, но не более 90 календарных дней после последнего взаимодействия, если договор не был заключён, либо до отзыва согласия. Если стороны заключат договор, дальнейшая обработка необходимых данных осуществляется на основании договора и законодательства.</p>
@@ -201,7 +204,8 @@ const legalContent={
 
     <p>Я подтверждаю, что указанные в форме данные принадлежат мне либо я имею законное основание для их передачи, а также что ознакомился с Политикой обработки персональных данных.</p>
 
-    <p class="legal-note">Согласие фиксируется только после установки отдельной отметки под формой. Чекбокс не отмечается заранее.</p>
+    <p class="legal-note">Согласие фиксируется только после установки отдельной отметки под формой и отправки заявки. Чекбокс не отмечается заранее. Номер редакции, ссылка на архив, контрольная сумма архивного файла, дата, время и IP-адрес включаются в письмо с заявкой и хранятся вместе с ней в пределах указанных сроков.</p>
+    <p><a href="https://marketolog-penza.ru/legal/lead-consent-2026-10-22-v1.html" target="_blank" rel="noopener noreferrer">Архив редакции согласия 2026-10-22-v1</a></p>
   `
 };
 const legalModal=document.querySelector('#legal-modal');
@@ -373,6 +377,11 @@ document.querySelectorAll('a[href="#contact"]').forEach(link=>{
 
 const menu=document.querySelector('#nav');const menuButton=document.querySelector('.menu-toggle');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open))});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
 const leadForm=document.querySelector('#lead-form');
+const leadConsentVersionField=document.createElement('input');
+leadConsentVersionField.type='hidden';
+leadConsentVersionField.name='consent_version';
+leadConsentVersionField.defaultValue=LEAD_CONSENT_VERSION;
+leadForm.appendChild(leadConsentVersionField);
 const contactField=leadForm.elements.contact;
 const submitButton=leadForm.querySelector('button[type="submit"]');
 const phonePattern=/^[+()\d\s-]{10,24}$/;
@@ -397,7 +406,11 @@ leadForm.addEventListener('submit',async event=>{
   try{
     const response=await fetch('api/lead.php',{method:'POST',headers:{Accept:'application/json'},body:new FormData(leadForm)});
     const data=await response.json().catch(()=>({}));
-    if(!response.ok||!data.ok)throw new Error(data.message||'Не удалось отправить заявку.');
+    if(!response.ok||!data.ok){
+      const error=new Error(data.message||'Не удалось отправить заявку.');
+      error.userFacing=true;
+      throw error;
+    }
     status.className='form-status success';
     status.textContent='Заявка отправлена. Я свяжусь с вами в ближайшее время.';
     reachMetrikaGoal('lead_form_success');
@@ -405,7 +418,7 @@ leadForm.addEventListener('submit',async event=>{
     contactField.setCustomValidity('');
   }catch(error){
     status.className='form-status error';
-    status.textContent='Не удалось отправить заявку. Напишите в Telegram или позвоните по номеру на сайте.';
+    status.textContent=error.userFacing?error.message:'Не удалось отправить заявку. Напишите в Telegram или позвоните по номеру на сайте.';
   }finally{
     submitButton.disabled=false;
     submitButton.removeAttribute('aria-busy');

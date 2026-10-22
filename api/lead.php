@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/lead-consent.php';
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
@@ -89,6 +90,20 @@ if ($consent !== 'yes') {
     respond(422, false, 'Необходимо согласие на обработку персональных данных.');
 }
 
+$submittedConsentVersion = $_POST['consent_version'] ?? null;
+if (!is_string($submittedConsentVersion)) {
+    respond(422, false, 'Обновите страницу и ознакомьтесь с актуальной редакцией согласия.');
+}
+try {
+    $consentEvidence = leadConsentEvidence($submittedConsentVersion);
+} catch (RuntimeException $error) {
+    error_log('Lead form: consent archive is unavailable or invalid.');
+    respond(503, false, 'Не удалось проверить редакцию согласия. Повторите позже.');
+}
+if ($consentEvidence === null) {
+    respond(422, false, 'Редакция согласия изменилась. Обновите страницу и подтвердите согласие заново.');
+}
+
 $mailTo = getenv('LEAD_MAIL_TO') ?: 'ivan_muzenitov@mail.ru';
 $mailFrom = getenv('LEAD_MAIL_FROM') ?: 'ivan_muzenitov@mail.ru';
 if (!filter_var($mailTo, FILTER_VALIDATE_EMAIL) || !filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
@@ -107,6 +122,10 @@ $body = implode("\n", [
     'Сообщение: ' . ($message !== '' ? $message : 'Не указано'),
     '',
     'Согласие на обработку персональных данных: получено',
+    'Способ согласия: отдельная отметка под формой и отправка заявки',
+    'Версия согласия: ' . $consentEvidence['version'],
+    'Архив текста согласия: ' . $consentEvidence['url'],
+    'SHA-256 архивного HTML-файла: ' . $consentEvidence['sha256'],
     'Дата и время: ' . date('d.m.Y H:i:s T'),
     'IP-адрес: ' . $clientIp,
 ]);
