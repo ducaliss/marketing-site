@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 // Keep this revision and its archive immutable. Publish a new path for future revisions.
-const LEAD_CONSENT_VERSION = '2026-10-22-v2';
-const LEAD_CONSENT_ARCHIVE = 'legal/lead-consent-2026-10-22-v2.html';
-const LEAD_CONSENT_SHA256 = 'f5cd9c6fd4feafb864cb9402e87a36b4490740acd6580196f7e3993821ace471';
+const LEAD_CONSENT_VERSION = '2026-11-11-v1';
+const LEAD_CONSENT_ARCHIVE = 'legal/lead-consent-2026-11-11-v1.html';
+const LEAD_CONSENT_SHA256 = 'd6e8e379fb435cc45f5d56a88e49af17f4dd3b6520c9843df1afb9cfb30e58e3';
 
 function leadConsentEvidence(string $submittedVersion): ?array
 {

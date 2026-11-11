@@ -105,8 +105,11 @@ if ($consentEvidence === null) {
 }
 
 $mailTo = getenv('LEAD_MAIL_TO') ?: 'ivan_muzenitov@mail.ru';
-$mailFrom = getenv('LEAD_MAIL_FROM') ?: 'ivan_muzenitov@mail.ru';
-if (!filter_var($mailTo, FILTER_VALIDATE_EMAIL) || !filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
+$mailFrom = getenv('LEAD_MAIL_FROM') ?: 'site@marketolog-penza.ru';
+// The envelope sender must belong to the site's SPF-authorized domain.
+// Restrict it to a shell-safe address before passing it to sendmail's -f option.
+if (!filter_var($mailTo, FILTER_VALIDATE_EMAIL) || !filter_var($mailFrom, FILTER_VALIDATE_EMAIL)
+    || preg_match('/^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+$/D', $mailFrom) !== 1) {
     error_log('Lead form: invalid mail environment configuration.');
     respond(503, false, 'Сервис временно недоступен.');
 }
@@ -133,12 +136,13 @@ $body = implode("\n", [
 $encodedFromName = '=?UTF-8?B?' . base64_encode('Сайт Ивана Музенитова') . '?=';
 $headers = [
     'From: ' . $encodedFromName . ' <' . $mailFrom . '>',
+    'Reply-To: ' . $mailTo,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
 ];
 
-if (!mail($mailTo, $subject, $body, implode("\r\n", $headers))) {
+if (!mail($mailTo, $subject, $body, implode("\r\n", $headers), '-f' . $mailFrom)) {
     error_log('Lead form: mail transport failed.');
     respond(503, false, 'Не удалось отправить заявку.');
 }

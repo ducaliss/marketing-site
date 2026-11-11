@@ -1,0 +1,25 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Keep certificate renewal reachable over HTTP.
+  RewriteRule ^\.well-known/acme-challenge/ - [L]
+  RewriteCond %{HTTP_HOST} ^www\.marketolog-penza\.ru$ [NC]
+  RewriteRule ^ https://marketolog-penza.ru%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+  RewriteRule ^ https://marketolog-penza.ru%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{THE_REQUEST} \s/+index\.html?[\s?] [NC]
+  RewriteRule ^index\.html?$ https://marketolog-penza.ru/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<FilesMatch "(^\.|\.(?:env|log|ini|bak|sql|tar|zip)$)">
+  Require all denied
+</FilesMatch>
